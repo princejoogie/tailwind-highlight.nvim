@@ -29,4 +29,8 @@ function M.setup(client, bufnr, opts)
   end
 end
 
+function M.ping()
+	print('tailwind-highlight: pong')
+end
+
 return M
