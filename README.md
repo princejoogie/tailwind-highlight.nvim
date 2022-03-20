@@ -1,6 +1,6 @@
 # tailwind-highlight.nvim
 
-highlight tailwind color classes in neovim
+Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://neovim.io/)
 
 ![preview](./assets/tw_highlight.png)
 
