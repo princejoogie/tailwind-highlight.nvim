@@ -1,0 +1,26 @@
+*tailwind-highlight.nvim*
+
+Highlight Tailwind CSS classes in neovim
+
+CONTENTS                                           *tailwind-highlight-contents*
+
+Introduction                                       |tailwind-highlight-introduction|
+Usage                                              |tailwind-highlight-usage|
+
+
+===========================================================================
+INTRODUCTION                                       *tailwind-highlight-introduction*
+
+This is a simple plug-in for Vim (and NeoVim) allowing one to see tailwind
+classes highlighted.
+
+
+===========================================================================
+USAGE                                              *tailwind-highlight-usage*
+
+TODO:
+>
+	$ vim foo.c
+
+
+vim:tw=78:sw=8:ts=8:ft=help:norl:noet
