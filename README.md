@@ -20,7 +20,7 @@ local tw_highlight = require('tailwind-highlight')
 -- in lsp's `on_attach` function
 local on_attach = function(client, bufnr)
   -- rest of your config
-  tw_highlight.setup(client, bufnr, 
+  tw_highlight.setup(client, bufnr, {
     -- defaults
     single_column = false, -- if true, only first character is highlighted
     debounce = 200, -- debounce delay on highlight update (in ms)
