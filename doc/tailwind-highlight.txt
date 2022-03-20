@@ -1,4 +1,4 @@
-*tailwind-highlight.nvim*
+*tailwind-highlight*
 
 Highlight Tailwind CSS classes in neovim
 
