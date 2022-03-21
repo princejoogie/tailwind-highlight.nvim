@@ -1,6 +1,6 @@
 ---@diagnostic disable: deprecated
 -- source: https://gist.github.com/runiq/31aa5c4bf00f8e0843cd267880117201
-local m = {}
+local M = {}
 
 --- debounces a function on the trailing edge. automatically
 --- `schedule_wrap()`s.
@@ -11,7 +11,7 @@ local m = {}
 ---call to `fn` within the timeframe. default: use arguments of the last call.
 -- @returns (function, timer) debounced function and timer. remember to call
 ---`timer:close()` at the end or you will leak memory!
-function m.debounce_trailing(fn, ms, first)
+function M.debounce_trailing(fn, ms, first)
   local timer = vim.loop.new_timer()
   local wrapped_fn
 
@@ -38,4 +38,4 @@ function m.debounce_trailing(fn, ms, first)
   return wrapped_fn, timer
 end
 
-return m
+return M
