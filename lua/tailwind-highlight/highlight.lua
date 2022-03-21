@@ -27,7 +27,10 @@ local function make_highlight_name(rgb, mode)
 end
 
 local function create_highlight(rgb_hex, options)
-  local mode = options.mode or "background"
+  local mode = 'background';
+  if options.mode == 'foreground' then
+    mode = 'foreground';
+  end
   local cache_key = table.concat({ HIGHLIGHT_MODE_NAMES[mode], rgb_hex }, "_")
   local highlight_name = HIGHLIGHT_CACHE[cache_key]
 
