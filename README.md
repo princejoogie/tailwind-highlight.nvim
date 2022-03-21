@@ -1,7 +1,7 @@
 # tailwind-highlight.nvim
 
 ![License](https://img.shields.io/badge/license-GPL2-brightgreen?style=flat)
-![Version](https://img.shields.io/github/v/release/princejoogie/tailwind-highlight.nvim?color=%2349C31B&include_prereleases&label=version)
+![Version](https://img.shields.io/github/v/release/princejoogie/tailwind-highlight.nvim?color=%2349C31B)
 
 Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://neovim.io/)
 
