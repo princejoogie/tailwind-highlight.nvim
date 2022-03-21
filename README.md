@@ -59,7 +59,7 @@ local tw_highlight = require('tailwind-highlight')
 | `mode`          | highlight mode `foreground \| background` | `background` |
 | `debounce`      | delay on updating highlights (ms)         |        `200` |
 
-**Without Lsp Installer**
+#### Without Lsp Installer
 
 > Manually install [tailwindcss-language-server](https://www.npmjs.com/package/@tailwindcss/language-server)
 
@@ -76,7 +76,7 @@ require('lspconfig').tailwindcss.setup({
 })
 ```
 
-**With Lsp Installer**
+#### With Lsp Installer
 
 > `:LspInstall tailwindcss`
 
