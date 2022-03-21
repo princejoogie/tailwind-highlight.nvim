@@ -1,12 +1,16 @@
 # tailwind-highlight.nvim
 
+![License](https://img.shields.io/badge/license-GPL2-brightgreen?style=flat)
+![Version](https://img.shields.io/github/v/release/princejoogie/tailwind-highlight.nvim?color=%2349C31B&include_prereleases&label=version)
+
 Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://neovim.io/)
 
 ![preview](./assets/tw_highlight.png)
 
 ## Installation
 
-- **Vim Plug**
+- **[Vim Plug](https://github.com/junegunn/vim-plug)**
+
   ```vim
   " required dependency
   Plug 'neovim/nvim-lspconfig'
@@ -15,13 +19,39 @@ Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://n
   Plug 'princejoogie/tailwind-highlight.nvim'
   ```
 
+- **[Vundle](https://github.com/VundleVim/Vundle.vim)**
+
+  ```vim
+  " required dependency
+  Plugin 'neovim/nvim-lspconfig'
+  " (optional) for installing tailwindcss language server
+  Plugin 'williamboman/nvim-lsp-installer'
+  Plugin 'princejoogie/tailwind-highlight.nvim'
+  ```
+
+- **[Dein](https://github.com/Shougo/dein.vim)**
+  ```vim
+  " required dependency
+  call dein#add('neovim/nvim-lspconfig')
+  " (optional) for installing tailwindcss language server
+  call dein#add('williamboman/nvim-lsp-installer')
+  call dein#add('princejoogie/tailwind-highlight.nvim')
+  ```
+
 ## Usage
 
 ```lua
 local tw_highlight = require('tailwind-highlight')
 ```
 
-#### Options
+#### Methods
+
+| Method  | Args                    |
+| ------- | ----------------------- |
+| `setup` | `(client, bufnr, opts)` |
+| `ping`  | `-`                     |
+
+#### Setup Options
 
 | Option          | Description                       | Default |
 | --------------- | --------------------------------- | ------: |
@@ -35,13 +65,11 @@ require('lspconfig').tailwindcss.setup({
   on_attach = function(client, bufnr)
     -- rest of you config
     tw_highlight.setup(client, bufnr, {
-      -- defaults
-      single_column = false, -- if true, only first character is highlighted
-      debounce = 200, -- debounce delay on highlight update (in ms)
+      single_column = false,
+      debounce = 200,
     })
   end
 })
-
 ```
 
 **With Lsp Installer**
@@ -53,9 +81,8 @@ require('nvim-lsp-installer').on_server_ready(function(server)
     on_attach = function(client, bufnr)
       -- rest of you config
       tw_highlight.setup(client, bufnr, {
-        -- defaults
-        single_column = false, -- if true, only first character is highlighted
-        debounce = 200, -- debounce delay on highlight update (in ms)
+        single_column = false,
+        debounce = 200,
       })
     end
   }
@@ -63,6 +90,16 @@ require('nvim-lsp-installer').on_server_ready(function(server)
   server:setup(opts)
 end)
 ```
+
+---
+
+Like the project? would appreciate a coffee ☕
+
+[![Buy Me A Coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/princejoogie)
+
+### Contributor list
+
+[![Contributors](https://contrib.rocks/image?repo=princejoogie/tailwind-highlight.nvim)](https://github.com/princejoogie/tailwind-highlight.nvim/graphs/contributors)
 
 ---
 
