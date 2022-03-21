@@ -46,19 +46,22 @@ local tw_highlight = require('tailwind-highlight')
 
 #### Methods
 
-| Method  | Args                    |
-| ------- | ----------------------- |
-| `setup` | `(client, bufnr, opts)` |
-| `ping`  | `-`                     |
+| Method  | Args                    | Returns  |
+| ------- | ----------------------- | -------- |
+| `setup` | `(client, bufnr, opts)` | `void`   |
+| `ping`  | `N/A`                   | `string` |
 
 #### Setup Options
 
-| Option          | Description                       | Default |
-| --------------- | --------------------------------- | ------: |
-| `single_column` | highlight only first character    |   false |
-| `debounce`      | delay on updating highlights (ms) |     200 |
+| Option          | Description                               |      Default |
+| --------------- | ----------------------------------------- | -----------: |
+| `single_column` | highlight only first character            |      `false` |
+| `mode`          | highlight mode `foreground \| background` | `background` |
+| `debounce`      | delay on updating highlights (ms)         |        `200` |
 
 **Without Lsp Installer**
+
+> Manually install [tailwindcss-language-server](https://www.npmjs.com/package/@tailwindcss/language-server)
 
 ```lua
 require('lspconfig').tailwindcss.setup({
@@ -66,6 +69,7 @@ require('lspconfig').tailwindcss.setup({
     -- rest of you config
     tw_highlight.setup(client, bufnr, {
       single_column = false,
+      mode = 'background',
       debounce = 200,
     })
   end
@@ -82,6 +86,7 @@ require('nvim-lsp-installer').on_server_ready(function(server)
       -- rest of you config
       tw_highlight.setup(client, bufnr, {
         single_column = false,
+        mode = 'background',
         debounce = 200,
       })
     end
