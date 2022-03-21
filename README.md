@@ -78,6 +78,8 @@ require('lspconfig').tailwindcss.setup({
 
 **With Lsp Installer**
 
+> `:LspInstall tailwindcss`
+
 ```lua
 
 require('nvim-lsp-installer').on_server_ready(function(server)
