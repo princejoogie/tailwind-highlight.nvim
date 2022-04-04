@@ -7,7 +7,8 @@ Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://n
 
 > "The neovim plugin [used](https://github.com/bautistaaa/dotfiles/blob/d53f8d0fe4b226e90bcbfcecc8ceea6a270ccd1c/nvim/lua/trash/plugins.lua#L65) by a Netflix Engineer"
 
-![preview](./assets/tw_highlight.png)
+<!-- ![preview](./assets/tw_highlight.png) -->
+![tailwind-highlight-demo](https://user-images.githubusercontent.com/47204120/161472735-55e9b976-99c4-4151-b4ce-437659125c12.jpg)
 
 ## Installation
 
