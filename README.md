@@ -5,12 +5,22 @@
 
 Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://neovim.io/)
 
-> "The neovim plugin [used](https://github.com/bautistaaa/dotfiles/blob/d53f8d0fe4b226e90bcbfcecc8ceea6a270ccd1c/nvim/lua/trash/plugins.lua#L65) by a Netflix Engineer"
+> "The neovim plugin [used](https://github.com/bautistaaa/dotfiles/blob/d53f8d0fe4b226e90bcbfcecc8ceea6a270ccd1c/nvim/lua/trash/plugins.lua#L65) by a Netflix Engineer (@trash_dev)"
 
-<!-- ![preview](./assets/tw_highlight.png) -->
-![tailwind-highlight-demo](https://user-images.githubusercontent.com/47204120/161472735-55e9b976-99c4-4151-b4ce-437659125c12.jpg)
+![tailwind-highlight-demo](./assets/demo.png)
 
 ## Installation
+
+- **[Packer](https://github.com/wbthomason/packer.nvim)**
+
+  ```lua
+  -- required dependency
+  use "neovim/nvim-lspconfig"
+  -- (optional) for installing tailwindcss language server
+  use "williamboman/nvim-lsp-installer"
+
+  use "princejoogie/tailwind-highlight.nvim"
+  ```
 
 - **[Vim Plug](https://github.com/junegunn/vim-plug)**
 
@@ -19,26 +29,8 @@ Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://n
   Plug 'neovim/nvim-lspconfig'
   " (optional) for installing tailwindcss language server
   Plug 'williamboman/nvim-lsp-installer'
+
   Plug 'princejoogie/tailwind-highlight.nvim'
-  ```
-
-- **[Vundle](https://github.com/VundleVim/Vundle.vim)**
-
-  ```vim
-  " required dependency
-  Plugin 'neovim/nvim-lspconfig'
-  " (optional) for installing tailwindcss language server
-  Plugin 'williamboman/nvim-lsp-installer'
-  Plugin 'princejoogie/tailwind-highlight.nvim'
-  ```
-
-- **[Dein](https://github.com/Shougo/dein.vim)**
-  ```vim
-  " required dependency
-  call dein#add('neovim/nvim-lspconfig')
-  " (optional) for installing tailwindcss language server
-  call dein#add('williamboman/nvim-lsp-installer')
-  call dein#add('princejoogie/tailwind-highlight.nvim')
   ```
 
 ## Usage
@@ -47,22 +39,7 @@ Highlight [Tailwind CSS](https://tailwindcss.com/) classes in [neovim](https://n
 local tw_highlight = require('tailwind-highlight')
 ```
 
-#### Methods
-
-| Method  | Args                    | Returns  |
-| ------- | ----------------------- | -------- |
-| `setup` | `(client, bufnr, opts)` | `void`   |
-| `ping`  | `N/A`                   | `string` |
-
-#### Setup Options
-
-| Option          | Description                               |      Default |
-| --------------- | ----------------------------------------- | -----------: |
-| `single_column` | highlight only first character            |      `false` |
-| `mode`          | highlight mode `foreground \| background` | `background` |
-| `debounce`      | delay on updating highlights (ms)         |        `200` |
-
-#### Without Lsp Installer
+### Without Lsp Installer
 
 > Manually install [tailwindcss-language-server](https://www.npmjs.com/package/@tailwindcss/language-server)
 
@@ -79,7 +56,7 @@ require('lspconfig').tailwindcss.setup({
 })
 ```
 
-#### With Lsp Installer
+### With Lsp Installer
 
 > `:LspInstall tailwindcss`
 
@@ -100,6 +77,21 @@ require('nvim-lsp-installer').on_server_ready(function(server)
   server:setup(opts)
 end)
 ```
+
+### Methods
+
+| Method  | Args                    | Returns  |
+| ------- | ----------------------- | -------- |
+| `setup` | `(client, bufnr, opts)` | `void`   |
+| `ping`  | `N/A`                   | `string` |
+
+### Setup Options
+
+| Option          | Description                               |      Default |
+| --------------- | ----------------------------------------- | -----------: |
+| `single_column` | highlight only first character            |      `false` |
+| `mode`          | highlight mode `foreground \| background` | `background` |
+| `debounce`      | delay on updating highlights (ms)         |        `200` |
 
 ---
 
